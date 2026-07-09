@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+}
+
+/* Tribal divider */
+.tribal-divider {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #2a2a2a 10%, #2a2a2a 90%, transparent);
+  margin: 3rem 0;
+}
+
+/* Red accent */
+.text-accent {
+  color: #ff0000;
+}
+
+.border-accent {
+  border-color: #ff0000;
+}
+
+/* Button styles */
+button, .btn {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #cc0000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 0, 0, 0.3);
+}
+
+a {
+  color: #ff0000;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  section { padding: 2rem 0; }
+}
