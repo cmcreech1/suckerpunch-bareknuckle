@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | SuckerPunch Entertainment</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="/">SUCKERPUNCH</a>
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about/">ABOUT</a></li>
+        <li><a href="/roster/">ROSTER</a></li>
+        <li><a href="/contact/">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section style="background: #0f0f0f; border-bottom: 2px solid #ff0000;">
+    <div class="container">
+      <h1 style="margin-bottom: 1rem;">GET IN TOUCH</h1>
+      <p style="opacity: 0.6; max-width: 600px;">Contact us for partnership opportunities, sponsorships, and fight bookings.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-content">
+        <div>
+          <div>
+            <h3>DIRECTOR</h3>
+            <div class="contact-item">
+              <p style="font-weight: bold; margin-bottom: 0.25rem;">SCOTT HOWARD</p>
+              <p style="color: #ff0000; font-weight: bold; font-size: 0.875rem; margin-bottom: 0.5rem;">BareKnuckle Fighting Division</p>
+              <a href="mailto:scotth@suckerpunchent.com" style="font-size: 0.875rem;">scotth@suckerpunchent.com</a>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <h3>ATHLETE RELATIONS</h3>
+            <div class="contact-item">
+              <p style="font-weight: bold; margin-bottom: 0.25rem;">CHRISTOPHER CREECH</p>
+              <p style="color: #ff0000; font-weight: bold; font-size: 0.875rem; margin-bottom: 0.5rem;">Director of Athlete Relations</p>
+              <a href="mailto:chrisc@suckerpunchent.com" style="font-size: 0.875rem;">chrisc@suckerpunchent.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label>NAME *</label>
+              <input type="text" required>
+            </div>
+
+            <div class="form-group">
+              <label>EMAIL *</label>
+              <input type="email" required>
+            </div>
+
+            <div class="form-group">
+              <label>SUBJECT *</label>
+              <select required>
+                <option>Select a subject...</option>
+                <option>Fight Booking</option>
+                <option>Sponsorship</option>
+                <option>Media Inquiry</option>
+                <option>Partnership</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>MESSAGE *</label>
+              <textarea required rows="6"></textarea>
+            </div>
+
+            <button type="submit">Send Message</button>
+            <div id="success-message" class="success-message" style="display: none; margin-top: 1rem;">
+              ✓ Message received. We'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>SUCKERPUNCH</h4>
+          <p style="font-size: 0.875rem; opacity: 0.6;">Elite bare-knuckle athletes. Athlete-first management.</p>
+        </div>
+        <div>
+          <h4>LINKS</h4>
+          <ul>
+            <li><a href="/about/" style="font-size: 0.875rem;">About</a></li>
+            <li><a href="/roster/" style="font-size: 0.875rem;">Roster</a></li>
+            <li><a href="/contact/" style="font-size: 0.875rem;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>CONTACT</h4>
+          <p style="font-size: 0.875rem; opacity: 0.6;">
+            <a href="mailto:scotth@suckerpunchent.com">Scott Howard</a><br>
+            <a href="mailto:chrisc@suckerpunchent.com">Christopher Creech</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-divider">
+        <p>&copy; 2024 SuckerPunch Entertainment. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      document.getElementById('success-message').style.display = 'block';
+      form.reset();
+      setTimeout(() => {
+        document.getElementById('success-message').style.display = 'none';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
