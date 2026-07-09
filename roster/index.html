@@ -33,7 +33,7 @@
       </div>
 
       <div style="margin-top: 2rem; text-align: center; border-top: 1px solid #1a1a1a; padding-top: 2rem;">
-        <p style="font-size: 0.875rem; opacity: 0.6;">Individual athlete headshot images appear once uploaded to the images/athletes/ folder.</p>
+        <p style="font-size: 0.875rem; opacity: 0.6;">Individual athlete headshot images appear once uploaded to the images/ folder.</p>
       </div>
     </div>
   </section>
@@ -126,7 +126,7 @@
     const athleteGrid = document.getElementById('athleteGrid');
     athletes.forEach((athlete) => {
       const filename = nameToFilename(athlete.name);
-      const imagePath = `/images/athletes/${filename}.jpg`;
+      const imagePath = `/images/${filename}.jpg`;
       
       const athleteCard = document.createElement('div');
       athleteCard.className = 'athlete-card';
@@ -145,3 +145,4 @@
     });
   </script>
 </body>
+</html>
