@@ -231,10 +231,8 @@ footer {
   background: #2a2a2a;
   border: 2px solid #2a2a2a;
   transition: all 0.3s;
-}
-
-.athlete-card:hover {
-  border-color: #ff0000;
+  display: flex;
+  flex-direction: column;
 }
 
 .athlete-image {
@@ -245,7 +243,7 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 0.875rem;
-  opacity: 0.5;
+  flex-shrink: 0;
 }
 
 .athlete-image img {
@@ -254,11 +252,10 @@ footer {
   object-fit: contain;
 }
 
-
 .athlete-info {
   padding: 1.5rem;
   border-left: 4px solid #ff0000;
-  margin-left: 100px;
+  flex-grow: 1;
 }
 
 .athlete-info h3 {
