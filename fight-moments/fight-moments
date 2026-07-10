@@ -1,0 +1,74 @@
+<!-- ADD THIS TO YOUR index.html HOME PAGE (in the middle, after hero section) -->
+
+<section style="background: #2a2a2a; padding: 4rem 0;">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 2rem;">FIGHT MOMENTS</h2>
+    
+    <div id="carousel" style="max-width: 800px; margin: 0 auto; position: relative; overflow: hidden; border: 2px solid #ff0000;">
+      <div id="carouselInner" style="display: flex; transition: transform 0.5s ease-in-out;">
+        <!-- Images will be added here by JavaScript -->
+      </div>
+      
+      <!-- Previous/Next buttons -->
+      <button id="prevBtn" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(255,0,0,0.7); color: white; border: none; padding: 10px 15px; cursor: pointer; font-size: 20px; z-index: 10; hover: background: rgba(255,0,0,0.9);">❮</button>
+      <button id="nextBtn" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(255,0,0,0.7); color: white; border: none; padding: 10px 15px; cursor: pointer; font-size: 20px; z-index: 10;">❯</button>
+    </div>
+
+    <p style="text-align: center; opacity: 0.6; margin-top: 1rem; font-size: 0.875rem;">Auto-rotating • Click arrows to navigate</p>
+  </div>
+</section>
+
+<script>
+  const totalImages = 10;
+  let currentIndex = 0;
+  const carouselInner = document.getElementById('carouselInner');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  // Create image elements
+  for (let i = 1; i <= totalImages; i++) {
+    const img = document.createElement('img');
+    img.src = `/fight-moments/fight_moment_${i}.jpg`;
+    img.alt = `Fight moment ${i}`;
+    img.style.cssText = `
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      flex-shrink: 0;
+    `;
+    carouselInner.appendChild(img);
+  }
+
+  // Update carousel position
+  function updateCarousel() {
+    const offset = -currentIndex * 100;
+    carouselInner.style.transform = `translateX(${offset}%)`;
+  }
+
+  // Next image
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    updateCarousel();
+    resetAutoRotate();
+  }
+
+  // Previous image
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    updateCarousel();
+    resetAutoRotate();
+  }
+
+  // Auto-rotate every 5 seconds
+  let autoRotateInterval = setInterval(nextImage, 5000);
+
+  // Reset auto-rotate when user clicks buttons
+  function resetAutoRotate() {
+    clearInterval(autoRotateInterval);
+    autoRotateInterval = setInterval(nextImage, 5000);
+  }
+
+  // Button click listeners
+  nextBtn.addEventListener('click', nextImage);
+  prevBtn.addEventListener('click', prevImage);
+</script>
